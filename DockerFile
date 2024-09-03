@@ -1,0 +1,8 @@
+# syntax=docker/dockerfile:1
+FROM node:20
+EXPOSE 7070
+WORKDIR /app
+RUN npm install npm@latest -g
+RUN npm install ghost-cli@latest -g
+COPY . .    
+CMD ["ghost","start"]
